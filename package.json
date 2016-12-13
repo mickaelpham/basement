@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/mickaelpham/basement#readme",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "autoprefixer": "^6.5.4",
+    "cssnano": "^3.9.1",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^6.2.0"
   }
 }
