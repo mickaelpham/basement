@@ -1,6 +1,7 @@
 var autoprefixer = require('autoprefixer');
 var cssnano      = require('cssnano');
 var gulp         = require('gulp');
+var precss       = require('precss');
 var postcss      = require('gulp-postcss');
 
 // Copy HTML files from src/ to build/ directory
@@ -12,6 +13,7 @@ gulp.task('html', function() {
 // Process CSS and copy to build/ directory
 gulp.task('css', function() {
   var processors = [
+    precss(),
     autoprefixer({ browsers: ['last 2 versions', '> 5%'] }),
     cssnano()
   ];
