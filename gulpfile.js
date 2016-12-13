@@ -41,10 +41,6 @@ gulp.task('serve', ['watch'], function() {
     },
     notify: false
   });
-
-  // gulp.watch('build/*.html').on('change', browserSync.reload)
 });
 
-gulp.task('default', function() {
-  console.log('Hello, world!');
-});
+gulp.task('default', ['serve']);
