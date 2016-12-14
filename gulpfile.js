@@ -14,6 +14,12 @@ gulp.task('html', function() {
     .pipe(browserSync.stream());;
 });
 
+// Copy fonts from vendor/ directory to build/ directory
+gulp.task('fonts', function() {
+  return gulp.src('vendor/fonts/*')
+    .pipe(gulp.dest('build/fonts'));
+})
+
 // Process CSS and copy to build/ directory
 gulp.task('css', function() {
   var processors = [
@@ -27,8 +33,11 @@ gulp.task('css', function() {
     .pipe(browserSync.stream());
 });
 
+// Build the site
+gulp.task('build', ['html', 'css', 'fonts']);
+
 // Watch for file changes and process them accordingly
-gulp.task('watch', ['html', 'css'], function() {
+gulp.task('watch', ['build'], function() {
   gulp.watch('src/*.html', ['html']);
   gulp.watch('src/**/*.css', ['css']);
 });

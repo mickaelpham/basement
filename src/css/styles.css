@@ -1,8 +1,37 @@
+@import '../../vendor/css/font-awesome';
 @import '../../vendor/css/normalize';
 
 /* Variables */
-$blue: #056ef0;
+$fonts: 'Nunito Sans', sans-serif;
+$mobilePadding: 15px;
+$lightGray: #eee;
+$darkGray: #333;
+$lightFont: 200;
 
-h1 {
-  color: $blue;
+body {
+  font-family: $fonts;
+}
+
+ul li {
+  margin-bottom: .5em;
+}
+
+/* Top navbar */
+.top-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $mobilePadding;
+  border-bottom: 1px solid $lightGray;
+}
+
+.site-brand {
+  text-decoration: none;
+  color: $darkGray;
+  font-size: 1.4em;
+  font-weight: $lightFont;
+}
+
+#openDrawerButton {
+  font-size: 1.5em;
 }
