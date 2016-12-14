@@ -3,11 +3,12 @@
 
 /* Variables */
 $fonts: 'Nunito Sans', sans-serif;
-$mobilePadding: 15px;
+$mobilePadding: 18px;
 $lightGray: #eee;
 $darkGray: #333;
-$lightFont: 200;
+$lightFont: 300;
 
+/* Basic HTML changes */
 body {
   font-family: $fonts;
 }
@@ -16,12 +17,17 @@ ul li {
   margin-bottom: .5em;
 }
 
+p {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
 /* Top navbar */
 .top-navbar {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  padding: $mobilePadding;
+  padding: calc($mobilePadding - 5px) $mobilePadding;
   border-bottom: 1px solid $lightGray;
 }
 
@@ -33,5 +39,47 @@ ul li {
 }
 
 #openDrawerButton {
-  font-size: 1.5em;
+  font-size: 1.2em;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%;
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 70px;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 16px 16px 16px 32px;
+  text-decoration: none;
+  font-size: 1.4em;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  font-weight: $lightFont;
+  border-bottom: 1px solid #333;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closeButton {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 2em;
+  border-bottom: 0;
+}
+
+/* Main container */
+.container {
+  padding: $mobilePadding;
 }

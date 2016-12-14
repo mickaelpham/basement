@@ -18,7 +18,14 @@ gulp.task('html', function() {
 gulp.task('fonts', function() {
   return gulp.src('vendor/fonts/*')
     .pipe(gulp.dest('build/fonts'));
-})
+});
+
+// Copy JS files from src/ to build/ directory
+gulp.task('js', function() {
+  return gulp.src('src/**/*.js')
+    .pipe(gulp.dest('build'))
+    .pipe(browserSync.stream());
+});
 
 // Process CSS and copy to build/ directory
 gulp.task('css', function() {
@@ -34,12 +41,13 @@ gulp.task('css', function() {
 });
 
 // Build the site
-gulp.task('build', ['html', 'css', 'fonts']);
+gulp.task('build', ['html', 'css', 'fonts', 'js']);
 
 // Watch for file changes and process them accordingly
 gulp.task('watch', ['build'], function() {
   gulp.watch('src/*.html', ['html']);
   gulp.watch('src/**/*.css', ['css']);
+  gulp.watch('src/**/*.js', ['js']);
 });
 
 // Serve the build/ directory with Browsersync and watch them
