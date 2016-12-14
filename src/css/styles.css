@@ -22,6 +22,11 @@ p {
   line-height: 1.5em;
 }
 
+html {
+  background: url(../img/tour-eiffel-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
 /* Top navbar */
 .top-navbar {
   display: flex;
@@ -29,13 +34,14 @@ p {
   justify-content: space-between;
   padding: calc($mobilePadding - 5px) $mobilePadding;
   border-bottom: 1px solid $lightGray;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .site-brand {
   text-decoration: none;
   color: $darkGray;
   font-size: 1.4em;
-  font-weight: $lightFont;
+  font-weight: 200;
 }
 
 .open-nav-button {
@@ -46,7 +52,7 @@ p {
 /* The side navigation menu */
 .sidenav {
   height: 100%;
-  width: 250px; /* 0 width - change this with JavaScript */
+  width: 0; /* 0 width - change this with JavaScript */
   position: fixed;
   z-index: 1;
   top: 0;
