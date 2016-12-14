@@ -27,6 +27,12 @@ gulp.task('js', function() {
     .pipe(browserSync.stream());
 });
 
+// Copy and modify images to build/ directory
+gulp.task('img', function() {
+  return gulp.src('src/**/*.jpg')
+    .pipe(gulp.dest('build'));
+});
+
 // Process CSS and copy to build/ directory
 gulp.task('css', function() {
   var processors = [
@@ -41,7 +47,7 @@ gulp.task('css', function() {
 });
 
 // Build the site
-gulp.task('build', ['html', 'css', 'fonts', 'js']);
+gulp.task('build', ['html', 'css', 'fonts', 'js', 'img']);
 
 // Watch for file changes and process them accordingly
 gulp.task('watch', ['build'], function() {

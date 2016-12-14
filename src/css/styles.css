@@ -38,14 +38,15 @@ p {
   font-weight: $lightFont;
 }
 
-#openDrawerButton {
+.open-nav-button {
   font-size: 1.2em;
+  cursor: pointer;
 }
 
 /* The side navigation menu */
 .sidenav {
   height: 100%;
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 250px; /* 0 width - change this with JavaScript */
   position: fixed;
   z-index: 1;
   top: 0;
@@ -53,30 +54,43 @@ p {
   background-color: #111;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 70px;
-  transition: 0.5s;
-}
-
-.sidenav a {
-  padding: 16px 16px 16px 32px;
-  text-decoration: none;
-  font-size: 1.4em;
-  color: #818181;
-  display: block;
   transition: 0.3s;
-  font-weight: $lightFont;
-  border-bottom: 1px solid #333;
-}
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+  a {
+    padding: 16px 16px 16px 32px;
+    text-decoration: none;
+    font-size: 1.4em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    font-weight: $lightFont;
+    border-bottom: 1px solid #333;
+  }
 
-.sidenav .closeButton {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 2em;
-  border-bottom: 0;
+  a:hover {
+    color: #f1f1f1;
+  }
+
+  .close-nav-button {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 2em;
+    border-bottom: 0;
+  }
+
+  @media screen and (min-height: 600px) {
+    .our-badge {
+      position: absolute;
+      bottom: 120px;
+      border-radius: 75px;
+      left: 50px;
+      width: 150px;
+      height: 150px;
+      background: url(../img/jenny-mickael-badge.jpg);
+      background-size: 150px;
+    }
+  }
 }
 
 /* Main container */
